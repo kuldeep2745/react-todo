@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Styles from "./App.module.css"
 
 const App = () => {
   const [data, setData] = useState("");
@@ -63,6 +64,11 @@ const App = () => {
 
   return (
     <div>
+      <div className={Styles.wave}></div>
+      <div className={Styles.wave}></div>
+      <div className={Styles.wave}></div>
+    <div className={Styles.centerContainer}>
+  <div className={Styles.centerContent}>
       <input value={data} onChange={(e) => onChangeHandler(e)} />
       <button onClick={onClickHandler}>{editMode ? "Edit" : "Add"}</button>
       <br />
@@ -86,6 +92,8 @@ const App = () => {
           <button onClick={() => removeHandler(index)}>X</button>
         </li>
       ))}
+    </div>
+    </div>
     </div>
   );
 };

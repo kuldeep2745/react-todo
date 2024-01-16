@@ -6,21 +6,21 @@ body {
     animation: gradient 15s ease infinite;
     background-size: 400% 400%;
     background-attachment: fixed;
-}
-
-@keyframes gradient {
+  }
+  
+  @keyframes gradient {
     0% {
-        background-position: 0% 0%;
+      background-position: 0% 0%;
     }
     50% {
-        background-position: 100% 100%;
+      background-position: 100% 100%;
     }
     100% {
-        background-position: 0% 0%;
+      background-position: 0% 0%;
     }
-}
-
-.wave {
+  }
+  
+  .wave {
     background: rgb(255 255 255 / 25%);
     border-radius: 1000% 1000% 0 0;
     position: fixed;
@@ -32,50 +32,60 @@ body {
     bottom: 0;
     left: 0;
     z-index: -1;
-}
-
-.wave:nth-of-type(2) {
+  }
+  
+  .wave:nth-of-type(2) {
     bottom: -1.25em;
     animation: wave 18s linear reverse infinite;
     opacity: 0.8;
-}
-
-.wave:nth-of-type(3) {
+  }
+  
+  .wave:nth-of-type(3) {
     bottom: -2.5em;
     animation: wave 20s -1s reverse infinite;
     opacity: 0.9;
-}
-
-@keyframes wave {
+  }
+  
+  @keyframes wave {
     2% {
-        transform: translateX(1);
+      transform: translateX(1);
     }
-
     25% {
-        transform: translateX(-25%);
+      transform: translateX(-25%);
     }
-
     50% {
-        transform: translateX(-50%);
+      transform: translateX(-50%);
     }
-
     75% {
-        transform: translateX(-25%);
+      transform: translateX(-25%);
     }
-
     100% {
-        transform: translateX(1);
+      transform: translateX(1);
     }
-}
-
-.centerContainer {
+  }
+  
+  .centerContainer {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    margin-top:150px;
+    align-items: center;
     height: 100vh; /* Optional: Set height for vertical centering */
   }
   
-  .centerContent {
-    /* Your content styles go here */
+  .listItem {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 15px;  */
   }
+  
+  
+  .card {
+    backdrop-filter: blur(7px) saturate(200%);
+    -webkit-backdrop-filter: blur(7px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.23);
+    border-radius: 50px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    min-height: 450px;
+    max-height: auto;
+    width: 450px;
+  }
+  

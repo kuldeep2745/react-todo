@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Styles from "./App.module.css"
+import Styles from "./App.module.css";
 
 const App = () => {
   const [data, setData] = useState("");
@@ -67,33 +67,31 @@ const App = () => {
       <div className={Styles.wave}></div>
       <div className={Styles.wave}></div>
       <div className={Styles.wave}></div>
-    <div className={Styles.centerContainer}>
-  <div className={Styles.centerContent}>
-      <input value={data} onChange={(e) => onChangeHandler(e)} />
-      <button onClick={onClickHandler}>{editMode ? "Edit" : "Add"}</button>
-      <br />
-      <button onClick={() => filterHandler("All")}>All</button>
-      <button onClick={() => filterHandler("Checked")}>Checked</button>
-      <button onClick={() => filterHandler("UnChecked")}>UnChecked</button>
-      {filteredArray()?.map((item, index) => (
-        <li
-          key={index}
-          style={{
-            textDecoration: `${item.checked ? "line-through" : "none"}`,
-          }}
-        >
-          <input
-            type="checkbox"
-            checked={item.checked}
-            onChange={() => checkHandler(index)}
-          />
-          {item.text}
-          <button onClick={() => editHandler(index)}>Edit</button>
-          <button onClick={() => removeHandler(index)}>X</button>
-        </li>
-      ))}
-    </div>
-    </div>
+      <div className={Styles.centerContainer}>
+        <div className={Styles.card}>
+          <input value={data} onChange={(e) => onChangeHandler(e)} />
+          <button onClick={onClickHandler}>{editMode ? "Edit" : "Add"}</button>
+          <br />
+          <button onClick={() => filterHandler("All")}>All</button>
+          <button onClick={() => filterHandler("Checked")}>Checked</button>
+          <button onClick={() => filterHandler("UnChecked")}>UnChecked</button>
+          <ul>
+            {filteredArray()?.map((item, index) => (
+              <li key={index} className={Styles.listItem}>
+                <input
+                  type="checkbox"
+                  id={`checkbox-${index}`}
+                  checked={item.checked}
+                  onChange={() => checkHandler(index)}
+                />
+                  <span style={{ textDecoration: `${item.checked ? "line-through" : "none"}` }}>{item.text}</span>
+                <button onClick={() => editHandler(index)}>Edit</button>
+                <button onClick={() => removeHandler(index)}>X</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

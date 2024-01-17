@@ -72,6 +72,7 @@ const App = () => {
       <div className={Styles.centerContainer}>
         <div className={Styles.card}>
           <div className={Styles.CentreAlignCard}>
+          <h1 style={{display:"flex", alignItems: "center", justifyContent: "center"}}>ToDo App</h1>
           <div className={Styles.inputButtonAlign}>
 
           <input

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Styles from "./App.module.css";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
 const App = () => {
   const [data, setData] = useState("");
@@ -69,12 +71,42 @@ const App = () => {
       <div className={Styles.wave}></div>
       <div className={Styles.centerContainer}>
         <div className={Styles.card}>
-          <input value={data} onChange={(e) => onChangeHandler(e)} />
-          <button onClick={onClickHandler}>{editMode ? "Edit" : "Add"}</button>
+          <div className={Styles.CentreAlignCard}>
+          <div className={Styles.inputButtonAlign}>
+
+          <input
+            className={Styles.inputs}
+            value={data}
+            onChange={(e) => onChangeHandler(e)}
+            required=""
+            />
+          <button className={Styles.button86} onClick={onClickHandler}>
+            {editMode ? "Edit" : "Add"}
+          </button>
+            </div>
           <br />
-          <button onClick={() => filterHandler("All")}>All</button>
-          <button onClick={() => filterHandler("Checked")}>Checked</button>
-          <button onClick={() => filterHandler("UnChecked")}>UnChecked</button>
+          <div className={Styles.filterAlign}>
+
+          <button
+            className={Styles.buttonwiggle}
+            onClick={() => filterHandler("All")}
+            >
+            All
+          </button>
+          <button
+            className={Styles.buttonwiggle}
+            onClick={() => filterHandler("Checked")}
+            >
+            Checked
+          </button>
+          <button
+            className={Styles.buttonwiggle}
+            onClick={() => filterHandler("UnChecked")}
+            >
+            UnChecked
+          </button>
+            </div>
+            </div>
           <ul>
             {filteredArray()?.map((item, index) => (
               <li key={index} className={Styles.listItem}>
@@ -84,9 +116,25 @@ const App = () => {
                   checked={item.checked}
                   onChange={() => checkHandler(index)}
                 />
-                  <span style={{ textDecoration: `${item.checked ? "line-through" : "none"}` }}>{item.text}</span>
-                <button onClick={() => editHandler(index)}>Edit</button>
-                <button onClick={() => removeHandler(index)}>X</button>
+                <span
+                  style={{
+                    textDecoration: `${item.checked ? "line-through" : "none"}`,
+                  }}
+                >
+                  {item.text}
+                </span>
+                <button
+                  className={Styles.buttonwiggle}
+                  onClick={() => editHandler(index)}
+                >
+                  <EditIcon />
+                </button>
+                <button
+                  className={Styles.buttonwiggle}
+                  onClick={() => removeHandler(index)}
+                >
+                  <DeleteIcon />
+                </button>
               </li>
             ))}
           </ul>

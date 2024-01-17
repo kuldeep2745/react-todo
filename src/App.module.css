@@ -65,6 +65,7 @@ body {
   }
   
   .centerContainer {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,7 +75,7 @@ body {
   .listItem {
     display: flex;
     align-items: center;
-    /* margin-bottom: 15px;  */
+    margin-bottom: 5px; 
   }
   
   
@@ -88,4 +89,137 @@ body {
     max-height: auto;
     width: 450px;
   }
+
+  .inputButtonAlign{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .CentreAlignCard{
+    display: flex;
+    flex-direction: column;
+  }
+  .filterAlign{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
   
+  .inputs{
+    margin-top: 20px;
+    margin-right: 20px;
+    border:none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+  }
+
+/* <button class="button86" role="button">Button 86</button> */
+
+.button86 {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button86::after,
+.button86::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button86::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.button86::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button86:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button86:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button86:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.buttonwiggle {
+  margin-right: 5px;
+  padding: 5px 10px;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s;
+  background: #1e1e1e;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px #363636, inset 0 0 10px #363636;
+}
+
+.buttonwiggle:hover {
+  animation: a 0.5s 1 linear;
+}
+
+@keyframes a {
+  0% {
+    transform: scale(0.7, 1.3);
+  }
+
+  25% {
+    transform: scale(1.3, 0.7);
+  }
+
+  50% {
+    transform: scale(0.7, 1.3);
+  }
+
+  75% {
+    transform: scale(1.3, 0.7);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
